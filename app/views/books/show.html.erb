@@ -1,0 +1,48 @@
+<h1>User info</h1>
+
+<!--ユーザー画像-->
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th><%= @user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= @user.introduction %></th>
+    </tr>
+  </thead>
+</table>
+
+<h1>New book</h1>
+<%= form_with model:@book, local:true do |f| %>
+  <label for="title">Title</label>
+  <div>
+   <%= f.text_field :title, autofocus: true, id:"title" %>
+  </div>
+  <label for="body">Opinion</label>
+  <div>
+   <%= f.text_field :body, autofocus: true, id:"body" %>
+  </div>
+  <div>
+   <%= f.submit "Create Book" %>
+  </div>
+<% end %>
+
+<h1>Book detail</h1>
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <!--ユーザー画像-->
+        <br>
+        <%= @user.name %>
+      </td>
+      <td><%= @book.title %></td>
+      <td><%= @book.body %></td>
+      <td><%= link_to "Edit", edit_book_path %></td>
+      <td><%= link_to "Destroy", book_path, method: :delete %></td>
+    </tr>
+  </tbody>
+</table>
