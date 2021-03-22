@@ -1,7 +1,5 @@
 <h1>User info</h1>
-
-<!--ユーザー画像-->
-
+<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
 <table>
   <thead>
     <tr>
@@ -14,6 +12,9 @@
     </tr>
   </thead>
 </table>
+<div>
+  <%= link_to "編集", edit_user_path(@user) %>
+</div>
 
 <h1>New book</h1>
 <%= form_with model:@book, local:true do |f| %>
@@ -29,3 +30,27 @@
    <%= f.submit "Create Book" %>
   </div>
 <% end %>
+
+<h1>Books</h1>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Opinion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @books.each do |books| %>
+      <tr>
+        <td><%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %></td>
+        <td><%= link_to books.title, book_path(@user) %></td>
+        <td><%= books.body %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div>
+
+</div>
