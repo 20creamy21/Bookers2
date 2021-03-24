@@ -1,37 +1,4 @@
-<%= render 'books/list' %>
-
-<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "no_image.jpg" %>
-
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th><%= @user.name %></th>
-    </tr>
-    <tr>
-      <th>introduction</th>
-      <th><%= @user.introduction %></th>
-    </tr>
-  </thead>
-</table>
-<div>
-  <%= link_to "編集", edit_user_path(@user) %>
-</div>
-
-<h1>New book</h1>
-<%= form_with model:@book, local:true do |f| %>
-  <label for="title">Title</label>
-  <div>
-   <%= f.text_field :title, autofocus: true, id:"title" %>
-  </div>
-  <label for="body">Opinion</label>
-  <div>
-   <%= f.text_field :body, autofocus: true, id:"body" %>
-  </div>
-  <div>
-   <%= f.submit "Create Book" %>
-  </div>
-<% end %>
+<%= render 'books/list', user: @user, book: @book %>
 
 <h1>Books</h1>
 <table>
