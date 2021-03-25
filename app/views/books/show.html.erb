@@ -17,8 +17,10 @@
       </td>
       <td><%= link_to @books.title, book_path(@books)  %></td>
       <td><%= @books.body %></td>
-      <td><%= link_to "Edit", edit_book_path(@books) %></td>
-      <td><%= link_to "Destroy", book_path(@books), method: :delete %></td>
+      <% if current_user.id == @books.user_id %>
+       <td><%= link_to "Edit", edit_book_path(@books) %></td>
+       <td><%= link_to "Destroy", book_path(@books), method: :delete %></td>
+      <% end %>
     </tr>
   </tbody>
 </table>
