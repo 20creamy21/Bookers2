@@ -15,7 +15,7 @@
   </thead>
 </table>
 <div>
-  <%= link_to edit_user_path(user) do %>
+  <%= link_to edit_user_path(user), class: "btn btn-secondary" do %>
     <i class="fas fa-user-cog"></i>
   <% end %>
 </div>
@@ -30,7 +30,7 @@
   <div>
    <%= f.text_field :body, autofocus: true, id:"body" %>
   </div>
-  <div>
-   <%= f.submit "Create Book" %>
+  <div class="button">
+   <%= f.submit "Create Book", class: "btn btn-secondary" %>
   </div>
 <% end %>

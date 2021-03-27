@@ -17,12 +17,28 @@
  @import 'font-awesome-sprockets';
  @import 'font-awesome';
 
- * {
-  list-style:none;
-  text-align:center;
- }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+ padding:12px 0px;
+}
 
  li {
   display:inline;
-  margin: 0 10px;
+  text-align:center;
+  list-style:none;
+  margin-right:30px;
+ }
+
+ .button {
+  margin:10px auto;
+ }
+
+ footer {
+  text-align:center;
+  padding:12px 0px;
  }
